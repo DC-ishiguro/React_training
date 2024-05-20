@@ -1,15 +1,21 @@
 import { useState } from "react";
 import '../App.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Greeting from "./practice/1/greeting";
 import Counter from "./practice/2/counter";
 import NameFrom from "./practice/3/namefrom"
 import Timer from "./practice/4/timer"
+import TodoList from "./practice/5/todolist";
 import FilterableList from "./practice/12/filterablelist";
 import Modal from "./practice/13/modal";
 
-const Practice = () => {
-    
+const Practice = (props) => {
+
+    //演習5
+    const tasks = ["task1", "task2", "task3", "task4", "task5"];
+
+    //演習6
+
     //演習13
     const [show, setShow] = useState(false)
     const openModal = () => {
@@ -48,7 +54,13 @@ const Practice = () => {
             <Timer />
 
             <p>演習5</p>
+            <div>
+                <h1>Todo List</h1>
+                <TodoList tasks={tasks} />
+            </div>
+
             <p>演習6</p>
+            <Link to="/parent">parent</Link>
             <p>演習7</p>
             <p>演習8</p>
             <p>演習9</p>
